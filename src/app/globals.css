@@ -1,26 +1,181 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-navy-950: #030816;
+  --color-navy-900: #060e22;
+  --color-navy-850: #0a1636;
+  --color-navy-800: #0f204b;
+  --color-navy-700: #172d63;
+  
+  --color-ocean-700: #0369a1;
+  --color-ocean-600: #0284c7;
+  --color-ocean-500: #0ea5e9;
+  --color-ocean-400: #38bdf8;
+  
+  --color-cyan-500: #06b6d4;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-300: #67e8f9;
+
+  --surface-base: #030816;
+  --surface-card: #081126;
+  --surface-card-hover: #0c1a3a;
+  --surface-elevated: #10224d;
+  
+  --border-subtle: rgba(56, 189, 248, 0.14);
+  --border-highlight: rgba(34, 211, 238, 0.36);
+  --cyan-glow: 0 0 24px rgba(34, 211, 238, 0.18);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-navy-950: #030816;
+  --color-navy-900: #060e22;
+  --color-navy-850: #0a1636;
+  --color-navy-800: #0f204b;
+  --color-navy-700: #172d63;
+
+  --color-ocean-700: #0369a1;
+  --color-ocean-600: #0284c7;
+  --color-ocean-500: #0ea5e9;
+  --color-ocean-400: #38bdf8;
+
+  --color-cyan-500: #06b6d4;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-300: #67e8f9;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--surface-base);
+  color: #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* 3D Perspective & Spatial Depth */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.card-3d-tilt {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transform: translateZ(0);
+}
+
+.card-3d-tilt:hover {
+  transform: translateY(-4px) rotateX(2deg) rotateY(-2deg) translateZ(12px);
+  box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.18), 0 0 25px rgba(14, 165, 233, 0.1);
+}
+
+/* Glassmorphism & Surface Utilities */
+.glass-panel {
+  background: rgba(8, 17, 38, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(12, 26, 58, 0.9);
+  border-color: var(--border-highlight);
+  box-shadow: 0 12px 36px -10px rgba(6, 182, 212, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Maritime Tactical Grid Overlay */
+.maritime-grid {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.08) 1px, transparent 0),
+    linear-gradient(to right, rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px, 64px 64px;
+}
+
+/* Nautical Radar Sweep */
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  animation: radarSweep 10s linear infinite;
+  transform-origin: center center;
+}
+
+/* Nautical Route Dash Line Animation */
+@keyframes routePulse {
+  0% { stroke-dashoffset: 48; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.route-animate {
+  stroke-dasharray: 8 6;
+  animation: routePulse 14s linear infinite;
+}
+
+/* Glowing Beacon Pulse */
+@keyframes beaconPing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+.beacon-pulse {
+  animation: beaconPing 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Reduced Motion Safeguard */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .route-animate,
+  .radar-sweep,
+  .beacon-pulse {
+    animation: none !important;
+  }
+  .card-3d-tilt:hover {
+    transform: none !important;
+  }
+}
+
+/* Custom Scrollbar for sleek corporate desktop feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #172d63;
+  border-radius: 4px;
+  border: 2px solid #030816;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Keyboard Accessible Focus Rings */
+:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 3px;
 }

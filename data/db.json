@@ -1,0 +1,415 @@
+{
+  "users": [
+    {
+      "id": "usr-9fc553379bef",
+      "fullName": "Development Admin [TEST USER]",
+      "email": "admin@northeastshipping.test",
+      "phone": "+91 93833 00001",
+      "passwordHash": "$2b$10$KNZWpbqeDKZHqLGKE3efF.MtMCdVkeS3.dcLJS2TWbvmWYAdAkpVy",
+      "role": "ADMIN",
+      "isActive": true,
+      "createdAt": "2026-10-27T10:13:55.981Z",
+      "updatedAt": "2026-10-27T10:13:55.981Z"
+    },
+    {
+      "id": "usr-3780446d3ddb",
+      "fullName": "Crewe Recruitment Officer [TEST USER]",
+      "email": "recruiter@northeastshipping.test",
+      "phone": "+91 93833 00002",
+      "passwordHash": "$2b$10$KNZWpbqeDKZHqLGKE3efF.MtMCdVkeS3.dcLJS2TWbvmWYAdAkpVy",
+      "role": "RECRUITER",
+      "isActive": true,
+      "createdAt": "2026-10-27T10:13:55.984Z",
+      "updatedAt": "2026-10-27T10:13:55.984Z"
+    },
+    {
+      "id": "usr-e966fe060f08",
+      "fullName": "Academy Admissions Counselor [TEST USER]",
+      "email": "admissions@northeastshipping.test",
+      "phone": "+91 93833 00003",
+      "passwordHash": "$2b$10$KNZWpbqeDKZHqLGKE3efF.MtMCdVkeS3.dcLJS2TWbvmWYAdAkpVy",
+      "role": "ADMISSIONS",
+      "isActive": true,
+      "createdAt": "2026-10-27T10:13:55.985Z",
+      "updatedAt": "2026-10-27T10:13:55.985Z"
+    },
+    {
+      "id": "usr-9989c93c69ea",
+      "fullName": "Cadet Applicant [TEST CANDIDATE]",
+      "email": "candidate@northeastshipping.test",
+      "phone": "+91 93833 00004",
+      "passwordHash": "$2b$10$KNZWpbqeDKZHqLGKE3efF.MtMCdVkeS3.dcLJS2TWbvmWYAdAkpVy",
+      "role": "CANDIDATE",
+      "isActive": true,
+      "createdAt": "2026-10-27T10:13:55.986Z",
+      "updatedAt": "2026-10-27T10:13:55.986Z"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "rec-001",
+      "title": "Deck Cadet / Trainee Navigating Officer",
+      "category": "merchant-navy",
+      "department": "Deck Department",
+      "vesselType": "Bulk Carriers & Container Vessels",
+      "contractDuration": "6-9 Months Rotational",
+      "location": "International Waters",
+      "experienceRequired": "Pre-sea Nautical Science completed / Fresher with valid CDC",
+      "stcwRequired": true,
+      "passportRequired": true,
+      "cdcRequired": true,
+      "description": "Recruitment intake for trainee navigating officers. Candidates will undergo structured onboard bridge watchkeeping training and vessel operations under senior navigational officers.",
+      "responsibilities": [
+        "Assist the Officer of the Watch (OOW) in safe navigational watchkeeping and lookout duties.",
+        "Participate in deck maintenance, mooring operations, and cargo loading/discharge monitoring.",
+        "Maintain shipboard safety gear, lifesaving appliances, and firefighting apparatus under supervision.",
+        "Log daily training tasks in the official Training Record Book (TRB)."
+      ],
+      "requirements": [
+        "Completion of DG-approved Pre-sea Nautical Science program or equivalent diploma.",
+        "Continuous Discharge Certificate (CDC) and valid Indian/International Passport.",
+        "Valid STCW-2010 Basic Safety Training certificates.",
+        "DG-approved medical fitness certificate with normal color vision."
+      ],
+      "status": "Open",
+      "postedAt": "2026-10-15"
+    },
+    {
+      "id": "rec-002",
+      "title": "Cruise Ship Hospitality & Guest Services Associate",
+      "category": "cruise-ship",
+      "department": "Hotel & Guest Relations",
+      "vesselType": "Luxury Cruise Liners",
+      "contractDuration": "6-8 Months Contract",
+      "location": "Global Cruise Itineraries",
+      "experienceRequired": "1-2 years in luxury hospitality, resort, or airline passenger handling",
+      "stcwRequired": true,
+      "passportRequired": true,
+      "cdcRequired": true,
+      "description": "Seeking polished guest service professionals for international passenger cruise vessels. Primary responsibilities include front-desk guest relations, itinerary briefings, and passenger satisfaction.",
+      "responsibilities": [
+        "Handle guest check-in, embarkation, and debarkation procedures with high efficiency.",
+        "Address passenger queries, coordinate excursions, and resolve guest service requests.",
+        "Maintain adherence to international maritime hotel and public health (USPH/BPH) compliance standards.",
+        "Coordinate with shipboard safety crew during mandatory passenger muster drills."
+      ],
+      "requirements": [
+        "Diploma or Degree in Hotel Management, Hospitality, or International Tourism.",
+        "Fluent verbal and written English communication skills; additional European language is advantageous.",
+        "Valid international passport with at least 18 months validity.",
+        "Willingness to obtain STCW passenger ship crowd management certification upon selection."
+      ],
+      "status": "Open",
+      "postedAt": "2026-10-18"
+    },
+    {
+      "id": "rec-003",
+      "title": "Marine Electro-Technical Officer (ETO)",
+      "category": "technical-engineering",
+      "department": "Technical & Engine",
+      "vesselType": "Oil & Chemical Tankers",
+      "contractDuration": "4-6 Months Rotational",
+      "location": "Worldwide Fleet Operations",
+      "experienceRequired": "Minimum 12 months seatime in rank on commercial tankers",
+      "stcwRequired": true,
+      "passportRequired": true,
+      "cdcRequired": true,
+      "description": "Experienced ETO required for fleet tankers with advanced automated engine rooms, cargo monitoring instrumentation, electrical power generation, and DP systems.",
+      "responsibilities": [
+        "Maintain high-voltage/low-voltage distribution systems, switchboards, and emergency generators.",
+        "Troubleshoot electronic control systems, PLC automation, fire detection loops, and bridge electronics.",
+        "Supervise refrigeration plants, HVAC equipment, and alarm monitoring consoles.",
+        "Maintain electrical inventory, spare parts manifest, and compliance logs."
+      ],
+      "requirements": [
+        "Certificate of Competency (CoC) as Electro-Technical Officer (ETO) under STCW standards.",
+        "Documented sea-service experience on tankers with automated power management systems.",
+        "Advanced High Voltage and Tanker Familiarization endorsements.",
+        "Valid seafarer medical clearance."
+      ],
+      "status": "Open",
+      "postedAt": "2026-10-20"
+    },
+    {
+      "id": "rec-004",
+      "title": "Shipboard Wellness & Spa Therapist",
+      "category": "hospitality-wellness",
+      "department": "Wellness & Spa Operations",
+      "vesselType": "Ocean Liners & Premium Cruise Fleets",
+      "contractDuration": "7 Months Contract",
+      "location": "Mediterranean & Caribbean Routes",
+      "experienceRequired": "Recognized spa therapist certification with 1+ years spa resort experience",
+      "stcwRequired": true,
+      "passportRequired": true,
+      "cdcRequired": true,
+      "description": "Join premier ocean fleet wellness centers delivering bespoke massage therapy, body treatments, and consultation services to international cruise travelers.",
+      "responsibilities": [
+        "Deliver premium wellness therapies and treatment regimens according to brand specifications.",
+        "Conduct passenger wellness consultations and promote specialized retail therapies.",
+        "Ensure strict spa sanitization and maritime public health hygiene protocols.",
+        "Participate actively in onboard emergency safety drills and muster assignments."
+      ],
+      "requirements": [
+        "Accredited certification in massage therapy, physiotherapy, or aesthetic spa care.",
+        "Warm professional demeanor with excellent customer engagement standards.",
+        "Valid passport with international travel clearance.",
+        "Medical clearance for ocean service."
+      ],
+      "status": "Open",
+      "postedAt": "2026-10-22"
+    }
+  ],
+  "trainingPrograms": [
+    {
+      "id": "trn-gp-rating",
+      "title": "General Purpose (GP) Rating Pre-Sea Training",
+      "code": "GP-6M",
+      "category": "ratings",
+      "deliveryMode": "Offline Campus & Maritime Simulators",
+      "duration": "6 Months (Full-Time Residential Offline)",
+      "eligibility": "10th Standard pass with minimum 40% aggregate and 40% in English. Age between 17.5 to 25 years. Medically fit per maritime standards.",
+      "batchSchedule": "Upcoming Offline Batches: January & July Intakes",
+      "overview": "Comprehensive pre-sea training program preparing trainees for dual-purpose ratings onboard merchant vessels, covering both seamanship navigation deck duties and marine engine room maintenance.",
+      "curriculum": [
+        "Bridge navigation watchkeeping, lookout duties & compass handling",
+        "Shipboard deck maintenance, mooring procedures, and rope work",
+        "Marine diesel engine fundamentals, auxiliary machinery, and workshop practice",
+        "STCW Mandatory Basic Safety Training (BST) & Security Familiarization",
+        "Physical endurance, swimming practicals, and maritime discipline"
+      ],
+      "careerOutcome": "Qualifies candidates to apply for Continuous Discharge Certificate (CDC) as Deck/Engine Trainee Rating on ocean-going vessels.",
+      "certificationBody": "Approved Directorate General of Shipping Curriculum Standards",
+      "status": "Admissions Open"
+    },
+    {
+      "id": "trn-dns-cadet",
+      "title": "Diploma in Nautical Science (DNS) - Leading to B.Sc.",
+      "code": "DNS-1Y",
+      "category": "officer-cadet",
+      "deliveryMode": "Offline Campus & Maritime Simulators",
+      "duration": "1 Year (Pre-Sea Residential Academy) + 18 Months Onboard Cadetship",
+      "eligibility": "10+2 (PCM) with minimum 60% aggregate in Physics, Chemistry, Mathematics and 50% in English. Age limit under 25 years.",
+      "batchSchedule": "Biannual Offline Academy Sessions: February & August Batches",
+      "overview": "Rigorous preparatory nautical curriculum qualifying aspiring cadets for merchant navy deck officer tracks, navigation theory, celestial navigation, electronic bridge simulators, and meteorology.",
+      "curriculum": [
+        "Terrestrial & celestial navigation, ECDIS simulator drills, and passage planning",
+        "International Regulations for Preventing Collisions at Sea (COLREGs)",
+        "Cargo handling, stowage calculations, and ship stability principles",
+        "Bridge Resource Management (BRM) & Marine Communications (GMDSS theory)",
+        "Maritime law, environmental protection (MARPOL) and safety protocols"
+      ],
+      "careerOutcome": "Leads to 2nd Mate (Foreign Going) Certificate of Competency after mandatory onboard sea-time training.",
+      "certificationBody": "Maritime University & DG Shipping Standard Academic Framework",
+      "status": "Admissions Open"
+    },
+    {
+      "id": "trn-stcw-bst",
+      "title": "STCW Basic Safety Training (BST) Modular Package",
+      "code": "STCW-BST",
+      "category": "stcw-mandatory",
+      "deliveryMode": "Offline Campus & Maritime Simulators",
+      "duration": "12 Days (Intensive Offline Practical Modules)",
+      "eligibility": "Minimum 18 years of age with passport or valid identity documentation and maritime medical clearance.",
+      "batchSchedule": "Weekly Batches Commencing Every Monday (Offline)",
+      "overview": "Mandatory safety certification required for all seafarers embarking on merchant navy and commercial cruise ships worldwide under IMO/STCW conventions.",
+      "curriculum": [
+        "Personal Survival Techniques (PST) with wet drill pool life raft deployment",
+        "Fire Prevention and Fire Fighting (FPFF) with live smoke chamber drills",
+        "Elementary First Aid (EFA) including CPR and trauma emergency response",
+        "Personal Safety and Social Responsibilities (PSSR) shipboard protocols",
+        "Security Awareness Training for Seafarers with Designated Security Duties"
+      ],
+      "careerOutcome": "Issuance of mandatory STCW-2010 safety course certificates essential for CDC issuance and shipboard embarkation.",
+      "certificationBody": "Standard IMO STCW-2010 Compliant Certifications",
+      "status": "Admissions Open"
+    },
+    {
+      "id": "trn-eto-presea",
+      "title": "Pre-Sea Training for Electro-Technical Officers (ETO)",
+      "code": "ETO-4M",
+      "category": "pre-sea",
+      "deliveryMode": "Offline Campus & Maritime Simulators",
+      "duration": "4 Months (Offline Residential Academy)",
+      "eligibility": "Degree/Diploma in Electrical / Electronics Engineering with minimum 60% marks and approved medical clearance.",
+      "batchSchedule": "Upcoming Batch: March & September Intakes",
+      "overview": "Specialized offline technical curriculum transforming electrical and electronics engineering graduates into marine ETO officers handling modern vessel automation, power distribution, and navigation systems.",
+      "curriculum": [
+        "High-voltage marine power generation, switchgear, and synchronization",
+        "PLC-controlled automation, automation safety loops, and sensors",
+        "Bridge navigation electronics, radar, gyrocompass, and communication units",
+        "Refrigerated cargo plants, boiler controls, and marine propulsion management"
+      ],
+      "careerOutcome": "Prepares candidates for ETO oral examinations and cadetship placement on international automated merchant fleets.",
+      "certificationBody": "DG Shipping Recognized Maritime Technical Guidelines",
+      "status": "Upcoming Batch"
+    }
+  ],
+  "applications": [
+    {
+      "opportunityId": "rec-001",
+      "opportunityTitle": "Deck Officer Trainee",
+      "fullName": "Integration Test Seafarer",
+      "email": "test-seafarer@integration.test",
+      "phone": "+91 93833 99999",
+      "status": "Shortlisted",
+      "id": "NS-APP-753899",
+      "createdAt": "2026-10-27T10:39:29.575Z",
+      "updatedAt": "2026-10-27T10:40:11.402Z",
+      "adminNotes": "[E2E TEST AUDIT] Shortlisted for Container Fleet vessel rotation."
+    },
+    {
+      "opportunityId": "rec-001",
+      "opportunityTitle": "Deck Officer Trainee",
+      "fullName": "Integration Test Seafarer",
+      "email": "test-seafarer@integration.test",
+      "phone": "+91 93833 99999",
+      "status": "Under Review",
+      "id": "NS-APP-688455",
+      "createdAt": "2026-10-27T10:21:31.130Z",
+      "updatedAt": "2026-10-27T10:21:31.132Z",
+      "adminNotes": "Verified STCW certificate"
+    },
+    {
+      "opportunityId": "rec-001",
+      "opportunityTitle": "Deck Officer Trainee",
+      "fullName": "Integration Test Seafarer",
+      "email": "test-seafarer@integration.test",
+      "phone": "+91 93833 99999",
+      "status": "Under Review",
+      "id": "NS-APP-507359",
+      "createdAt": "2026-10-27T10:19:33.324Z",
+      "updatedAt": "2026-10-27T10:19:33.346Z",
+      "adminNotes": "Verified STCW certificate"
+    },
+    {
+      "opportunityId": "rec-001",
+      "opportunityTitle": "Deck Officer Trainee",
+      "fullName": "Integration Test Seafarer",
+      "email": "test-seafarer@integration.test",
+      "phone": "+91 93833 99999",
+      "status": "Under Review",
+      "id": "NS-APP-737831",
+      "createdAt": "2026-10-27T10:18:13.529Z",
+      "updatedAt": "2026-10-27T10:18:13.531Z",
+      "adminNotes": "Verified STCW certificate"
+    },
+    {
+      "opportunityId": "rec-002",
+      "fullName": "Maria Fernandez",
+      "email": "maria.fernandez@cruisestaff.test",
+      "phone": "+91 93833 88888",
+      "currentRank": "Guest Relations Associate",
+      "cdcNumber": "GOA-778899",
+      "passportNumber": "P4455667",
+      "totalSeaTime": "14 Months",
+      "vesselExperience": "Luxury Ocean Cruise Fleets",
+      "additionalNotes": "STCW Passenger Ship Crowd Management certified.",
+      "status": "Submitted",
+      "opportunityTitle": "Cruise Ship Hospitality & Guest Services Associate",
+      "id": "NS-APP-779584",
+      "createdAt": "2026-10-27T10:16:57.222Z",
+      "updatedAt": "2026-10-27T10:16:57.222Z"
+    },
+    {
+      "opportunityId": "rec-001",
+      "opportunityTitle": "Deck Officer Trainee",
+      "fullName": "Integration Test Seafarer",
+      "email": "test-seafarer@integration.test",
+      "phone": "+91 93833 99999",
+      "status": "Under Review",
+      "id": "NS-APP-470661",
+      "createdAt": "2026-10-27T10:14:08.046Z",
+      "updatedAt": "2026-10-27T10:14:08.047Z",
+      "adminNotes": "Verified STCW certificate"
+    },
+    {
+      "opportunityId": "rec-001",
+      "opportunityTitle": "Deck Cadet / Trainee Navigating Officer",
+      "fullName": "Sample Trainee Seafarer [TEST RECORD]",
+      "email": "candidate@northeastshipping.test",
+      "phone": "+91 93833 00004",
+      "currentRank": "Trainee Deck Cadet",
+      "cdcNumber": "TEST-CDC-998877",
+      "passportNumber": "T9988776",
+      "totalSeaTime": "Fresher (Pre-Sea Nautical Graduate)",
+      "vesselExperience": "Academy Training Simulator",
+      "additionalNotes": "[TEST SEED DATA] Holder of valid STCW BST and seafarer medical clearance.",
+      "status": "Submitted",
+      "id": "NS-APP-698126",
+      "createdAt": "2026-10-27T10:13:55.987Z",
+      "updatedAt": "2026-10-27T10:13:55.987Z"
+    },
+    {
+      "opportunityId": "rec-001",
+      "opportunityTitle": "Deck Cadet / Trainee Navigating Officer",
+      "fullName": "Second Officer Tenzin Dorjee",
+      "email": "tenzin.dorjee@seafarers.org",
+      "phone": "+91 98765 12345",
+      "currentRank": "3rd Officer",
+      "cdcNumber": "KOL 445588",
+      "passportNumber": "Z8942314",
+      "totalSeaTime": "24 Months",
+      "vesselExperience": "Handymax Bulk Carriers & Container Vessels",
+      "additionalNotes": "Holds valid STCW 2010 BST, ECDIS, BRM and DG approved medical clearance.",
+      "id": "NS-APP-296299",
+      "createdAt": "2026-10-27T09:59:25.825Z",
+      "status": "Submitted"
+    }
+  ],
+  "trainingEnquiries": [
+    {
+      "programId": "trn-gp-rating",
+      "programTitle": "General Purpose (GP) Rating Pre-Sea Training",
+      "fullName": "Prospective Cadet [TEST ENQUIRY]",
+      "email": "prospective.cadet@testmail.com",
+      "phone": "+91 93833 00005",
+      "highestQualification": "10th Standard",
+      "age": 18,
+      "cityState": "Ukhrul, Manipur",
+      "message": "[TEST SEED DATA] Inquiring regarding upcoming offline academy batch commencement dates and hostel amenities.",
+      "status": "Interview Scheduled",
+      "id": "NS-TRN-973443",
+      "createdAt": "2026-10-27T10:13:55.989Z",
+      "updatedAt": "2026-10-27T10:40:11.404Z",
+      "counselorNotes": "[E2E TEST COUNSELOR] Campus verification scheduled for next Monday."
+    },
+    {
+      "programId": "trn-gp-rating",
+      "programTitle": "Offline Maritime Academy Training",
+      "fullName": "Rahul Sharma",
+      "email": "rahul.maritime@gmail.com",
+      "phone": "+91 94351 99887",
+      "highestQualification": "10th Standard",
+      "age": 19,
+      "message": "[Resident: Imphal, Manipur] Interested in the upcoming January offline batch. Please provide hostel and physical fitness details.",
+      "id": "NS-TRN-477480",
+      "createdAt": "2026-10-27T09:59:25.829Z",
+      "status": "New"
+    }
+  ],
+  "contactEnquiries": [
+    {
+      "name": "Maritime Fleet Representative [TEST ENQUIRY]",
+      "email": "fleet.rep@testpartner.com",
+      "phone": "+91 93833 00006",
+      "enquiryType": "Shipowner Crewing",
+      "message": "[TEST SEED DATA] General corporate inquiry regarding crewing collaboration and deck officer availability.",
+      "status": "Resolved",
+      "id": "NS-CNT-302212",
+      "createdAt": "2026-10-27T10:13:55.991Z",
+      "updatedAt": "2026-10-27T10:40:11.406Z"
+    }
+  ],
+  "documents": [
+    {
+      "id": "DOC-65B665668CF4163F",
+      "originalName": "test_resume.pdf",
+      "storedFileName": "DOC-65B665668CF4163F_1793096259428.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 77,
+      "documentType": "resume",
+      "filePath": "/Users/a/Desktop/northeast-shipping-website/uploads/DOC-65B665668CF4163F_1793096259428.pdf",
+      "createdAt": "2026-10-27T10:17:39.430Z"
+    }
+  ]
+}
