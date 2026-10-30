@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import crypto from 'crypto';
 import { DocumentMetadata } from '@/models/validation';
+import { isR2Configured, uploadToR2, downloadFromR2 } from './r2';
 
 const UPLOAD_DIR = process.env.UPLOAD_DIR || path.join(process.cwd(), 'uploads');
 const MAX_FILE_SIZE_MB = parseInt(process.env.MAX_FILE_SIZE_MB || '5', 10);
@@ -45,6 +46,7 @@ export interface UploadResult {
 
 /**
  * Securely saves an uploaded candidate document (CV, CDC, STCW certificates).
+ * Uses Cloudflare R2 when configured, with local filesystem fallback.
  */
 export async function saveUploadedFile(
   file: File,
@@ -83,18 +85,32 @@ export async function saveUploadedFile(
   if (file.type === 'image/jpeg') extension = '.jpg';
   if (file.type === 'image/png') extension = '.png';
 
-  // 5. Generate secure storage path with UUID
+  // 5. Generate secure storage key with UUID
   const docId = `DOC-${crypto.randomBytes(8).toString('hex').toUpperCase()}`;
   const storedFileName = `${docId}_${Date.now()}${extension}`;
 
-  await fs.mkdir(UPLOAD_DIR, { recursive: true });
-  const fullPath = path.join(UPLOAD_DIR, storedFileName);
-
-  // 6. Write file with restricted file permissions
-  await fs.writeFile(fullPath, buffer, { mode: 0o600 });
-
-  // 7. Sanitize original filename (remove directory traversal & special chars)
+  // 6. Sanitize original filename (remove directory traversal & special chars)
   const sanitizedOriginalName = path.basename(file.name).replace(/[^a-zA-Z0-9._-]/g, '_');
+
+  let storagePath: string;
+
+  // 7. Cloudflare R2 Upload or Local Fallback
+  if (isR2Configured()) {
+    const r2Key = `documents/${storedFileName}`;
+    const r2Res = await uploadToR2(r2Key, buffer, file.type);
+    if (!r2Res.success) {
+      return {
+        success: false,
+        error: r2Res.error || 'Failed to upload document to Cloudflare R2.'
+      };
+    }
+    storagePath = `r2://${r2Key}`;
+  } else {
+    await fs.mkdir(UPLOAD_DIR, { recursive: true });
+    const fullPath = path.join(UPLOAD_DIR, storedFileName);
+    await fs.writeFile(fullPath, buffer, { mode: 0o600 });
+    storagePath = fullPath;
+  }
 
   const metadata: DocumentMetadata = {
     id: docId,
@@ -104,7 +120,7 @@ export async function saveUploadedFile(
     sizeBytes: file.size,
     uploadedByUserId: userId,
     documentType,
-    filePath: fullPath,
+    filePath: storagePath,
     createdAt: new Date().toISOString()
   };
 
@@ -115,8 +131,17 @@ export async function saveUploadedFile(
 }
 
 /**
- * Reads an uploaded file by metadata.
+ * Reads an uploaded file by metadata from Cloudflare R2 or local storage.
  */
 export async function readUploadedFile(metadata: DocumentMetadata): Promise<Buffer> {
+  if (metadata.filePath.startsWith('r2://')) {
+    const key = metadata.filePath.replace('r2://', '');
+    const buffer = await downloadFromR2(key);
+    if (!buffer) {
+      throw new Error(`File ${key} could not be retrieved from Cloudflare R2.`);
+    }
+    return buffer;
+  }
+
   return fs.readFile(metadata.filePath);
 }

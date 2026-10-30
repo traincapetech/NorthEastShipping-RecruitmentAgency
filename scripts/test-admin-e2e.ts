@@ -148,11 +148,11 @@ async function runE2ETests() {
   console.log('\n👥 Suite 3: Candidate Application Dossier Triage');
 
   const apps = await dbAdapter.getApplications({ limit: 5 });
-  assert(apps.data.length > 0, 'Database contains seafarer applications');
+  assert(apps.data.length > 0 && Boolean(apps.data[0]?.id), 'Database contains seafarer applications');
 
   const targetApp = apps.data[0];
   const appStatusUpdated = await dbAdapter.updateApplicationStatus(
-    targetApp.id,
+    targetApp.id!,
     'Under Review',
     '[E2E TEST AUDIT] CDC verified with DG Shipping checker. Scheduled for technical interview.'
   );
@@ -165,7 +165,7 @@ async function runE2ETests() {
 
   // Transition to Shortlisted
   const appShortlisted = await dbAdapter.updateApplicationStatus(
-    targetApp.id,
+    targetApp.id!,
     'Shortlisted',
     '[E2E TEST AUDIT] Shortlisted for Container Fleet vessel rotation.'
   );
@@ -177,11 +177,11 @@ async function runE2ETests() {
   console.log('\n💬 Suite 4: Offline Academy Admissions Inquiries Counseling');
 
   const enquiries = await dbAdapter.getTrainingEnquiries({ limit: 5 });
-  assert(enquiries.data.length > 0, 'Database contains training enquiries');
+  assert(enquiries.data.length > 0 && Boolean(enquiries.data[0]?.id), 'Database contains training enquiries');
 
   const targetEnq = enquiries.data[0];
   const enqUpdated = await dbAdapter.updateTrainingEnquiryStatus(
-    targetEnq.id,
+    targetEnq.id!,
     'Contacted',
     '[E2E TEST COUNSELOR] Telephoned prospective cadet. Discussed eligibility criteria and campus hostel facilities.'
   );
@@ -194,7 +194,7 @@ async function runE2ETests() {
 
   // Transition to Interview Scheduled
   const enqInterview = await dbAdapter.updateTrainingEnquiryStatus(
-    targetEnq.id,
+    targetEnq.id!,
     'Interview Scheduled',
     '[E2E TEST COUNSELOR] Campus verification scheduled for next Monday.'
   );
@@ -212,10 +212,11 @@ async function runE2ETests() {
   assert(contactMsgs.data.length > 0, 'Database contains contact messages');
 
   const targetMsg = contactMsgs.data[0];
-  const msgUpdated = await dbAdapter.updateContactEnquiryStatus(targetMsg.id, 'In Progress');
+  assert(Boolean(targetMsg && targetMsg.id), 'Target contact message has valid ID');
+  const msgUpdated = await dbAdapter.updateContactEnquiryStatus(targetMsg.id!, 'In Progress');
   assert(msgUpdated?.status === 'In Progress', 'Contact message updated to In Progress');
 
-  const msgResolved = await dbAdapter.updateContactEnquiryStatus(targetMsg.id, 'Resolved');
+  const msgResolved = await dbAdapter.updateContactEnquiryStatus(targetMsg.id!, 'Resolved');
   assert(msgResolved?.status === 'Resolved', 'Contact message updated to Resolved');
 
   // ----------------------------------------------------

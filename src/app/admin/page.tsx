@@ -15,6 +15,8 @@ import {
   ShieldCheck
 } from 'lucide-react';
 
+export const instant = false;
+
 export default async function AdminDashboardPage() {
   const [
     oppsRes,

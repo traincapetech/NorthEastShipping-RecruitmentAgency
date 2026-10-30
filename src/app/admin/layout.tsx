@@ -4,6 +4,8 @@ import { getAdminSession } from '@/actions/admin';
 import { checkDatabaseHealth } from '@/lib/db';
 import { AdminLayoutClient } from '@/components/layout/AdminLayoutClient';
 
+export const instant = false;
+
 export const metadata: Metadata = {
   title: 'Admin Console | Northeast Shipping & Recruitment Agency Pvt Ltd',
   robots: {

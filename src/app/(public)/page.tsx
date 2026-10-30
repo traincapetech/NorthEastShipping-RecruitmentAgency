@@ -11,6 +11,8 @@ import { ContactCTA } from '@/components/home/ContactCTA';
 import { getOpportunities } from '@/services/recruitment.service';
 import { getTrainingPrograms } from '@/services/training.service';
 
+export const instant = false;
+
 export default async function HomePage() {
   const [opportunities, programs] = await Promise.all([
     getOpportunities(),
